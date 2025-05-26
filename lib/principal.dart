@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: LoginScreen(),
+    home: PrincipalScreen(),
   ));
 }
  
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class PrincipalScreen extends StatelessWidget {
+  const  PrincipalScreen({super.key});
  
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,17 @@ class LoginScreen extends StatelessWidget {
                     text: 'SOU PROFESSOR',
                     onPressed: () {
                       // Ação ao clicar em "SOU PROFESSOR"
+                      
                     },
+                  ),
+                   const Text(
+                    'Não tem cadastro? Clique aqui.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFF060C2C),
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),

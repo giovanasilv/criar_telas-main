@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'tela2.dart'; // importa a nova tela
 import 'cadastro.dart';
 import 'login.dart';
+import 'principal.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -30,10 +31,10 @@ class TelaInicial extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const OpsApp()),
+              MaterialPageRoute(builder: (context) => const PrincipalScreen()),
             );
           },
-          child: Image.asset("assets/images/FIEB.PNG"),
+          child: Image.asset("assets/images/OPS.PNG"),
         ),
       ),
     );
