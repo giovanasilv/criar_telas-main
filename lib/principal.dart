@@ -8,7 +8,7 @@ void main() {
 }
  
 class PrincipalScreen extends StatelessWidget {
-  const  PrincipalScreen({super.key});
+  const PrincipalScreen({super.key});
  
   @override
   Widget build(BuildContext context) {
@@ -19,30 +19,17 @@ class PrincipalScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Ícone com engrenagem e ferramentas
-            const Icon(Icons.build_circle_outlined, size: 100, color: Colors.white),
- 
-            const SizedBox(height: 16),
-            const Text(
-              'OPS!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-              ),
+            Image.asset(
+              'assets/images/imagem.png',
+               height: 400,
             ),
-            const Text(
-              'Sistema para ocorrências!',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-              ),
-            ),
- 
+            const SizedBox(height: 40),
+           
             const SizedBox(height: 40),
  
             // Container branco com opções
             Container(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -72,16 +59,15 @@ class PrincipalScreen extends StatelessWidget {
                     text: 'SOU PROFESSOR',
                     onPressed: () {
                       // Ação ao clicar em "SOU PROFESSOR"
-                      
                     },
                   ),
-                   const Text(
-                    'Não tem cadastro? Clique aqui.',
-                    textAlign: TextAlign.center,
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Não tem cadastro? Clique aqui',
                     style: TextStyle(
                       color: Color(0xFF060C2C),
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
@@ -102,23 +88,26 @@ class CustomButton extends StatelessWidget {
  
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF060C2C), // Mesma cor do fundo
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+    return SizedBox(
+      width: double.infinity, // Botão ocupa toda a largura possível do container
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFF060C2C),
+          padding: const EdgeInsets.symmetric(vertical: 18),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          elevation: 4,
+          shadowColor: Colors.black45,
         ),
-        shadowColor: Colors.black54,
-        elevation: 6,
-      ),
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
+        child: Text(
+          text.toUpperCase(),
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

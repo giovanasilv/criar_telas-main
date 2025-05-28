@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
-
+ 
+ 
 class OpsApp extends StatelessWidget {
   const OpsApp({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,21 +17,21 @@ class OpsApp extends StatelessWidget {
     );
   }
 }
-
+ 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
+ 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
+ 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 1; // Começa em "SOLUCIONADAS"
-
+ 
   @override
   Widget build(BuildContext context) {
     final isPending = selectedIndex == 0;
-
+ 
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
+ 
   Widget _buildTabButton(String text, int index) {
     final isSelected = selectedIndex == index;
     return ElevatedButton(
@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Text(text),
     );
   }
-
+ 
   Widget _buildOcorrenciaCard(bool isPending) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 40),

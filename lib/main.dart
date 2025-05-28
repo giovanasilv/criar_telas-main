@@ -4,6 +4,8 @@ import 'tela2.dart'; // importa a nova tela
 import 'cadastro.dart';
 import 'login.dart';
 import 'principal.dart';
+import 'occorrencia.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,10 +33,10 @@ class TelaInicial extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const PrincipalScreen()),
+              MaterialPageRoute(builder: (context) => const CriarOcorrenciaPage()),
             );
           },
-          child: Image.asset("assets/images/OPS.PNG"),
+          child: Image.asset("assets/images/imagem.png"),
         ),
       ),
     );
