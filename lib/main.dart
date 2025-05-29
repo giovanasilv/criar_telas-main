@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'App com Navegação',
       home: const TelaInicial(),
     );
@@ -34,7 +35,7 @@ class TelaInicial extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const VisualizarOcorrenciaPage()),
+              MaterialPageRoute(builder: (context) => const VisualizarOcorrenciaPage(status: '',)),
             );
           },
           child: Image.asset("assets/images/imagem.png"),
