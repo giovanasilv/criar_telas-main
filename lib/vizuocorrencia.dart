@@ -13,6 +13,13 @@ class _VisualizarOcorrenciaPageState extends State<VisualizarOcorrenciaPage> {
   // Variável para controlar o estado do botão
   bool isSelected = false;
 
+  @override
+  void initState() {
+    super.initState();
+    // Define o estado inicial baseado no status recebido
+    isSelected = widget.status.toUpperCase() != 'PENDENTE';
+  }
+
   // Função para alternar o estado do botão
   void toggleState() {
     setState(() {
@@ -149,24 +156,24 @@ class _VisualizarOcorrenciaPageState extends State<VisualizarOcorrenciaPage> {
                         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 8),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                        decoration: BoxDecoration(
-                          color: statusColor,
-                          borderRadius: BorderRadius.circular(20),
+
+                      // BOTÃO DE STATUS COM COR DE FUNDO CORRETA
+                      ElevatedButton(
+                        onPressed: toggleState,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: isSelected ? Colors.green[700] : Colors.red[800],
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                         ),
-                        child: ElevatedButton(
-                          onPressed: toggleState,
-                          style: ElevatedButton.styleFrom(
-                            foregroundColor: statusColor, // Cor de fundo
-                            backgroundColor: statusColor,
-                          ),
-                          child: Text(
-                            isSelected ? 'SOLUCIONADO' : 'PENDENTE', // Texto do botão
-                            style: TextStyle(color: isSelected ? const Color.fromARGB(255, 242, 243, 240) : const Color.fromARGB(255, 255, 8, 0), fontSize: 20),
-                          ),
+                        child: Text(
+                          isSelected ? 'SOLUCIONADO' : 'PENDENTE',
+                          style: const TextStyle(fontSize: 20),
                         ),
                       ),
+
                     ],
                   ),
                 ),
