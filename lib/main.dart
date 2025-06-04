@@ -35,7 +35,7 @@ class TelaInicial extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const VisualizarOcorrenciaPage(status: '',)),
+              MaterialPageRoute(builder: (context) => const  TelaPendentes()),
             );
           },
           child: Image.asset("assets/images/imagem.png"),
